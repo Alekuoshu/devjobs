@@ -27,7 +27,7 @@ class AuthenticatedSessionController extends Controller
     {
         $request->authenticate();
 
-        $redirect_url = (session('redirect_url') && auth()->user()->rol === 1 && $request->user()->hasVerifiedEmail()) ? session('redirect_url') : RouteServiceProvider::HOME;
+        $redirect_url = (session('redirect_url') && auth()->user()->rol == 1 && $request->user()->hasVerifiedEmail()) ? session('redirect_url') : RouteServiceProvider::HOME;
 
         $request->session()->regenerate();
 

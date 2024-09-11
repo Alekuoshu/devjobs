@@ -17,7 +17,7 @@ class RolReclutador
     public function handle(Request $request, Closure $next)
     {
         // evitar que el administrador entre en la ruta de uusuarios
-        if ($request->user()->rol === 2) {
+        if ($request->user()->rol == 2) {
             return redirect()->route('home');
         }
         return $next($request);

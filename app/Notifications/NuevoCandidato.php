@@ -35,7 +35,11 @@ class NuevoCandidato extends Notification
      */
     public function via($notifiable)
     {
-        return ['mail', 'database'];
+        if (env('MAIL_ENABLED')) {
+            return ['mail', 'database'];
+        } else {
+            return ['database'];
+        }
     }
 
     /**

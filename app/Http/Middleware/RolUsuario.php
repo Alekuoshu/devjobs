@@ -17,7 +17,7 @@ class RolUsuario
     public function handle(Request $request, Closure $next)
     {
         // evitar que el usuario entre en la ruta de administrador
-        if ($request->user()->rol === 1) {
+        if ($request->user()->rol == 1) {
             return redirect()->route('home');
         }
         return $next($request);

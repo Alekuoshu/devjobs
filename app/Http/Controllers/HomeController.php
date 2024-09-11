@@ -17,7 +17,7 @@ class HomeController extends Controller
     public function __invoke(Request $request)
     {
         if (Auth::guard('web')->check()) {
-            if (session('redirect_url') && auth()->user()->rol === 1 && $request->user()->hasVerifiedEmail()) {
+            if (session('redirect_url') && auth()->user()->rol == 1 && $request->user()->hasVerifiedEmail()) {
                 $redirect_url = session('redirect_url');
                 session()->forget('redirect_url');
             }

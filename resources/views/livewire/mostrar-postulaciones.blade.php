@@ -17,7 +17,7 @@
                         @php
                             $status = $vacante->candidatos()->where('user_id', auth()->user()->id)->value('status');
                         @endphp
-                        Estado: <span class="italic text-{{ $status === 1 ? 'green' : 'red' }}-600">{{ $status === 1 ? 'El reclutador ha visto tu CV.' : 'El reclutador no ha visto tu CV aún.' }}</span>
+                        Estado: <span class="italic text-{{ $status == 1 ? 'green' : 'red' }}-600">{{ $status == 1 ? 'El reclutador ha visto tu CV.' : 'El reclutador no ha visto tu CV aún.' }}</span>
                     </p>
                 </div>
 
